@@ -11,6 +11,17 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+  $("#query").keydown(function(event) {
+    if (event.keyCode === 13){
+      query = $(this).val();
+      window.location.href = "/search?query=" + query;
+    }
+  });
+});
