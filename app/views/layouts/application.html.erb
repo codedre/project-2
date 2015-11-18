@@ -5,11 +5,11 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 </head>
 <body>
   <div class="container-fluid">
     <header>
+      <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
       <% if current_user %>
   <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
 <% else %>
