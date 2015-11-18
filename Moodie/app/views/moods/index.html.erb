@@ -1,0 +1,7 @@
+<h2>Your Moods</h2>
+
+<h3>Add Mood <%= link_to "+", new_mood_path, class: "btn btn-success" %></h3>
+
+<% @moods.each do |mood| %>
+  <h2><%= mood.name %></h2>
+<% end %>
