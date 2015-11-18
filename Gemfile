@@ -6,6 +6,8 @@ gem 'figaro'
 gem 'bootstrap-sass'
 gem 'pry'
 gem 'simple_form'
+gem 'devise'
+gem 'omniauth-facebook'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
