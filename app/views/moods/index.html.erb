@@ -3,8 +3,10 @@
 <i class="glyphicon glyphicon-plus"></i><% end %></h3>
 
 <% @moods.each do |mood| %>
-  <h2><%= mood.name %> <%= link_to new_mood_food_path(mood), class: "btn btn-success", title: "add food" do %>Add Food &nbsp;<i class="glyphicon glyphicon-edit"></i><% end %> <%= link_to edit_mood_path(mood), class: "btn btn-primary", title: "Edit" do %>Edit &nbsp;<i class="glyphicon glyphicon-edit"></i><% end %> <%= link_to mood_path(mood), class: "btn btn-danger", method: :delete, title: "Delete" do %><i class="glyphicon glyphicon-minus"></i><% end %></h2>
+  <h2><%= mood.name %> <%= link_to new_mood_food_path(mood), class: "btn btn-success", title: "add food" do %>Add Food &nbsp;<i class="glyphicon glyphicon-plus"></i><% end %> <%= link_to edit_mood_path(mood), class: "btn btn-primary", title: "Edit" do %>Edit &nbsp;<i class="glyphicon glyphicon-edit"></i><% end %> <%= link_to mood_path(mood), class: "btn btn-danger", method: :delete, title: "Delete" do %><i class="glyphicon glyphicon-minus"></i><% end %></h2>
+  <ul class="list-group">
     <% mood.foods.each do |food| %>
-      <p><%= food.name %></p>
+      <li class="list-group-item"><%= food.name %> <%= link_to mood_food_path(mood, food), class: "btn-xs btn-danger pull-right", method: :delete, title: "Delete" do %><i class="glyphicon glyphicon-minus"></i><% end %></li>
     <% end %>
+  </ul>
 <% end %>
