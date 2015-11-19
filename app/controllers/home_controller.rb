@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    authenticate_user!
+    @user = current_user
   end
   def search
     parameters = { term: params[:query], limit: 16 }

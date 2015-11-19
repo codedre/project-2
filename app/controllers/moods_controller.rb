@@ -1,18 +1,19 @@
 class MoodsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :index]
   # index
   def index
-    @moods = Mood.all
+    @moods = current_user.moods.order("created_at DESC")
+    @user = current_user
   end
 
   # new
   def new
-    @mood = Mood.new
+    @mood = current_user.moods.new
   end
 
   # create
   def create
-    @mood = Mood.create!(mood_params)
+    @mood = current_user.moods.create!(mood_params)
     redirect_to moods_path
   end
 
@@ -23,19 +24,19 @@ class MoodsController < ApplicationController
 
   # edit
   def edit
-    @mood = Mood.find(params[:id])
+    @mood = current_user.moods.find(params[:id])
   end
 
   #update
   def update
-    @mood = Mood.find(params[:id])
+    @mood = current_user.moods.find(params[:id])
     @mood.update(mood_params)
     redirect_to moods_path
   end
 
   #delete
   def destroy
-    @mood = Mood.find(params[:id])
+    @mood = current_user.moods.find(params[:id])
     @mood.destroy
     redirect_to moods_path
   end

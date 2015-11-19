@@ -1,6 +1,12 @@
-<div class="row">
+<div class="row main-row">
   <div class="col-md-2 panel">
-
+    <%= image_tag @user.image, class: "center-block" %>
+    <h3 class="center"><%= @user.name %></h3>
+    <ul class="list-group nav">
+      <li class="list-group-item"><%= fa_icon "search", text: "Search" %></li>
+      <li class="list-group-item"><%= fa_icon "smile-o", text: "Moods" %></li>
+      <li class="list-group-item"><%= fa_icon "cog", text: "Preferences" %></li>
+    </ul>
   </div>
   <div class="col-md-10 cards-container">
     <h2>Your Moods</h2>
