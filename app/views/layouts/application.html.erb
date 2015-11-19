@@ -9,16 +9,13 @@
 <body>
   <div class="container-fluid">
     <header>
-      <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-      <% if current_user %>
-  <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
-<% else %>
-  <h3><%= link_to 'Signup', new_user_registration_path %></h3>
-  <h3><%= link_to 'Login', new_user_session_path %></h3>
-<% end %>
+      <ul class="hmenu">
+        <%= render 'devise/menu/registration_items' %>
+        <%= render 'devise/menu/login_items' %>
+      </ul>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </header>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
     <%= yield %>
   </div>
 </body>
