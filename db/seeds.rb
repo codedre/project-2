@@ -11,9 +11,14 @@ Food.destroy_all
 
 
 
-  Mood.create(name: "Angry")
-  Mood.create(name: "Bitchy")
-  Mood.create(name: "Cheerful")
-  Mood.create(name: "Gloomy")
-  Mood.create(name: "Sick")
-  Mood.create(name: "Thankful")
+m1 = Mood.create(name: "Angry")
+m2 = Mood.create(name: "Bitchy")
+Mood.create(name: "Cheerful")
+Mood.create(name: "Gloomy")
+Mood.create(name: "Sick")
+Mood.create(name: "Thankful")
+
+m1.foods.create(name: "Burgers")
+m1.foods.create(name: "Ice Cream")
+m2.foods.create(name: "Thai")
+m2.foods.create(name: "Mexican")

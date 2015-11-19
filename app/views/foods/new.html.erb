@@ -1,0 +1,4 @@
+<%= simple_form_for([@mood,@food]) do |f| %>
+  <%= f.input :name, placeholder: "Bacon, Ice Cream, Pizze, Swordfish", label: "Add a Food type: " %>
+  <%= f.button :submit %>
+<% end %>

@@ -26,6 +26,20 @@ class MoodsController < ApplicationController
     @mood = Mood.find(params[:id])
   end
 
+  #update
+  def update
+    @mood = Mood.find(params[:id])
+    @mood.update(mood_params)
+    redirect_to moods_path
+  end
+
+  #delete
+  def destroy
+    @mood = Mood.find(params[:id])
+    @mood.destroy
+    redirect_to moods_path
+  end
+
 
   private
   def mood_params
