@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "home#index"
   get "search", to: "home#search"
 
+  get "sign_in", to: "moods#index"
+
   resources :moods do
     resources :foods
   end

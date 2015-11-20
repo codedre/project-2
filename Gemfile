@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'yelp', require: 'yelp'
-gem 'httparty'
+#gem 'httparty'
 gem 'figaro'
-gem 'bootstrap-sass'
 gem 'pry'
 gem 'simple_form'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'geocoder'
 gem "font-awesome-rails"
+gem 'materialize-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record

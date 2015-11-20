@@ -1,52 +1,33 @@
-@import "bootstrap-sprockets"
-@import "bootstrap"
 @import "font-awesome"
-
-html
-  height: 100%
+@import "materialize/components/color"
+$primary-color: color("blue", "lighten-2") !default
+@import "materialize"
 
 body
-  background-color: #34495e
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+
+main
+  flex: 1 0 auto
+
+footer.page-footer
+  padding-top: 0
+
+#query
   color: #ecf0f1
-  height: 100%
 
-.panel
-  height: 100%
-  min-height: 100%
-  padding-top: 40px
-  box-sizing:border-box
+.quesiton-wrapper
+  height: 100vh
+  margin: 0
 
-.center
-  text-align: center
+.login
+  padding: 40px 10px
+  height: 100vh
+  margin: 0
 
-.center-block
-  display: block
-  margin: auto
+  .login-content
+    padding-top: 170px
 
-ul.hmenu
-  list-style: none
-  margin: 0 0 2em
-  padding: 0
-
-
-ul.hmenu li
-  display: inline
-
-.list-group-item
-  color: #1f1f1f
-
-.list-group
-  padding-top: 10px
-
-.nav
-  li
-    text-align: center
-    font-size: 18px
-
-
-.main-row
-  height: 100%
-
-.copy
-  position: absolute
-  bottom: 0px
+    h2
+      margin: 50px 0
