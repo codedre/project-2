@@ -4,8 +4,15 @@
         <h3 class="col m6">I'm in the mood for:</h3>
         <%= render "search_bar" %>
       </div>
+      <div class="results-wrapper">
+        <table></table>
+      </div>
     </div>
     <div class="col s12 m2 l3 login">
-      <%= render "form" %>
+      <% if user_signed_in? %>
+        <p>I'm signed in</p>
+      <% else %>
+        <%= render "form" %>
+      <% end %>
     </div>
 </div>

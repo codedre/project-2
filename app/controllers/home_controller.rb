@@ -8,7 +8,11 @@ class HomeController < ApplicationController
   def search
     parameters = { term: params[:query], limit: 16 }
     @search = YelpSearch.new("washington,dc", parameters)
-    @restaurants = @search.businesses
+    @restraurants = @search.businesses
+    respond_to do |format|
+      format.html
+      format.json { render json: @restraurants }
+    end
   end
 
 

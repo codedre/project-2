@@ -22,8 +22,49 @@ $(document).ready(function() {
 
   $("#query").keydown(function(event) {
     if (event.keyCode === 13){
+      var self = $(this);
       query = $(this).val();
-      window.location.href = "/search?query=" + query;
+      // window.location.href = "/search?query=" + query;
+      $.ajax({
+        url: '/search?query=',
+        type: 'GET',
+        dataType: 'json',
+        data: {query: query}
+      })
+      .done(function( response ) {
+        console.log(response);
+        $(".quesiton-wrapper").removeClass('valign-wrapper').css('height', 'auto');;
+        displayResults(response);
+      })
+      .fail(function() {
+        console.log("error");
+      })
+      .always(function() {
+        console.log("complete");
+      });
+
     }
   });
+
+  $(".yelp").submit(function(event) {
+    event.preventDefault();
+  });
+
+  function displayResults(results){
+    table = $("table");
+    table.empty();
+    $(results).each(function(index, el) {
+      place = {
+        image: "<td><img src = '" + el.image_url + "'></td>",
+        name: "<td><h3>" + el.name + "</h3>",
+        rating: "<p>" + el.raiting + "</p></td>",
+        reviews: "<td><p>" + el.review_count + "</p></td>"
+      };
+      var newRow = $('<tr></tr>');
+      newRow.html(place.image + place.name + place.rating + place.reviews);
+      table.append(newRow);
+    });
+  }
+
+
 });

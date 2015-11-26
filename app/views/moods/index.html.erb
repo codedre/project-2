@@ -1,5 +1,5 @@
-<div class="row main-row">
-  <div class="col m2 panel">
+<div class="row">
+  <div class="col m4">
     <%= image_tag @user.image, class: "center-block" %>
     <h3 class="center"><%= @user.name %></h3>
     <ul class="list-group nav">
@@ -8,10 +8,12 @@
       <li class="list-group-item"><%= fa_icon "cog", text: "Preferences" %></li>
     </ul>
   </div>
-  <div class="col m10 cards-container">
+  <div class="col m8">
     <h2>Your Moods</h2>
-    <h3>Add Mood <%= link_to new_mood_path, class: "btn btn-success" do %>
-    <i class="glyphicon glyphicon-plus"></i><% end %></h3>
-    <%= render 'cards' %>
+    <h3>Add Mood <%= link_to new_mood_path, class: "btn-floating btn-large waves-effect waves-light red" do %>
+    <i class="material-icons mdi-content-add"></i><% end %></h3>
+    <div class="row">
+      <%= render 'cards' %>
+    </div>
   </div>
 </div>
