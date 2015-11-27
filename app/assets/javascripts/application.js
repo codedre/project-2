@@ -60,7 +60,7 @@ $(document).ready(function() {
         image: "<td><img src = '" + el.image_url + "'></td>",
         name: "<td><h3>" + el.name + "</h3>",
         rating: "<img src = '" + el.rating_img_url + "'></td>",
-        reviews: "<td><p>" + el.review_count + "</p></td>"
+        reviews: "<td><p>Reviews: " + el.review_count + "</p></td>"
       };
       var newRow = $('<tr></tr>');
       newRow.html(place.image + place.name + place.rating + place.reviews);

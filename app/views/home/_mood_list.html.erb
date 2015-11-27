@@ -1,7 +1,10 @@
-<ul class="mood-list">
-  <% @user.moods.each do |mood| %>
-    <li id="<%= mood.id %>">
-      <%= mood.name %>
-    </li>
-  <% end %>
-</ul>
+<div class="moods">
+  <ul class="mood-list collection with-header">
+    <li class="collection-header"><h4>Select a Mood</h4></li>
+    <% @user.moods.each do |mood| %>
+      <li id="<%= mood.id %>" class="collection-item">
+        <%= mood.name.capitalize %>
+      </li>
+    <% end %>
+  </ul>
+</div>
