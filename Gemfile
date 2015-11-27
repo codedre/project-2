@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'yelp', require: 'yelp'
 #gem 'httparty'
+gem 'emojione-rails'
 gem 'figaro'
 gem 'pry'
 gem 'simple_form'

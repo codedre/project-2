@@ -2,6 +2,7 @@
 @import "materialize/components/color"
 $primary-color: color("blue", "lighten-2") !default
 @import "materialize"
+@import "emojione"
 
 body
   display: flex
@@ -29,10 +30,21 @@ footer.page-footer
     h2
       margin: 50px 0
 
-.collection-item
+li.collection-item
+  border: none
   color: black
+  .row
+    margin-bottom: 0
 
 .slide
   display: block
   top: 10
   transition: top 1s linear
+
+.panel
+  text-align: center
+  padding-top: 40px !important
+
+.card
+  .btn
+    padding: 0 1.8rem

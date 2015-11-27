@@ -1,11 +1,10 @@
 <div class="row">
-  <div class="col m4">
+  <div class="col m4 panel">
     <%= image_tag @user.image, class: "center-block" %>
-    <h3 class="center"><%= @user.name %></h3>
-    <ul class="list-group nav">
-      <li class="list-group-item"><%= fa_icon "search", text: "Search" %></li>
-      <li class="list-group-item"><%= fa_icon "smile-o", text: "Moods" %></li>
-      <li class="list-group-item"><%= fa_icon "cog", text: "Preferences" %></li>
+    <h3><%= @user.name %></h3>
+    <ul class="collection nav">
+      <li class="collection-item  blue-grey lighten-4"><%= link_to "Search", root_path, class: "material-icons mdi-action-search" %></li>
+      <li class="collection-item  blue-grey lighten-4"><%= link_to " Moods", moods_path, class: "fa fa-smile-o" %></li>
     </ul>
   </div>
   <div class="col m8">

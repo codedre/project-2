@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require materialize-sprockets
+//= require emojione
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
@@ -22,9 +23,7 @@ $(document).ready(function() {
 
   $("#query").keydown(function(event) {
     if (event.keyCode === 13){
-      var self = $(this);
       query = $(this).val();
-      // window.location.href = "/search?query=" + query;
       $.ajax({
         url: '/search?query=',
         type: 'GET',
@@ -33,7 +32,7 @@ $(document).ready(function() {
       })
       .done(function( response ) {
         console.log(response);
-        $(".quesiton-wrapper").removeClass('valign-wrapper').css('height', 'auto');;
+        $(".quesiton-wrapper").removeClass('valign-wrapper').css('height', 'auto');
         displayResults(response);
       })
       .fail(function() {
@@ -57,7 +56,7 @@ $(document).ready(function() {
       place = {
         image: "<td><img src = '" + el.image_url + "'></td>",
         name: "<td><h3>" + el.name + "</h3>",
-        rating: "<p>" + el.raiting + "</p></td>",
+        rating: "<img src = '" + el.rating_img_url + "'></td>",
         reviews: "<td><p>" + el.review_count + "</p></td>"
       };
       var newRow = $('<tr></tr>');

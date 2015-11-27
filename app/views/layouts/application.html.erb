@@ -16,6 +16,10 @@
             <li><%= render 'devise/menu/registration_items' %></li>
             <li><%= render 'devise/menu/login_items' %></li>
           </ul>
+          <ul class="left hide-on-med-and-down">
+            <li><%= link_to "Search", root_path, class: "material-icons mdi-action-search" %></li>
+            <li><%= link_to " Moods", moods_path, class: "fa fa-smile-o" %></li>
+          </ul>
         </div>
       </nav>
       <nav>
@@ -26,7 +30,13 @@
            <li><%= render 'devise/menu/registration_items' %></li>
            <li><%= render 'devise/menu/login_items' %></li>
          </ul>
+         <ul class="left hide-on-med-and-down">
+           <li><%= link_to "Search", root_path, class: "material-icons mdi-action-search" %></li>
+           <li><%= link_to " Moods", moods_path, class: "fa fa-smile-o" %></li>
+         </ul>
          <ul class="side-nav" id="mobile-demo">
+           <li><%= link_to "Search", root_path, class: "material-icons mdi-action-search" %></li>
+           <li><%= link_to " Moods", moods_path, class: "fa fa-smile-o" %></li>
            <li><%= render 'devise/menu/registration_items' %></li>
            <li><%= render 'devise/menu/login_items' %></li>
          </ul>

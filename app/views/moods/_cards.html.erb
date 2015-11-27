@@ -1,8 +1,8 @@
 <% @moods.each do |mood| %>
   <div class="col s12 m4">
-    <div class="card blue-grey darken-1">
+    <div class="card blue-grey darken-1 hoverable">
       <div class="card-content white-text">
-        <span class="card-title"><%= mood.name %>
+        <span class="card-title"><%= mood.name %><br>
           <%= link_to new_mood_food_path(mood), class: "waves-effect waves-light btn green", title: "add food" do %>
           <i class="material-icons mdi-content-add"></i><% end %>
           <%= link_to edit_mood_path(mood), class: "waves-effect waves-light btn blue", title: "Edit" do %>
@@ -12,7 +12,16 @@
         </span>
         <ul class="collection">
           <% mood.foods.each do |food| %>
-            <li class="collection-item "><%= food.name %> <%= link_to mood_food_path(mood, food), class: "waves-effect waves-light btn red", method: :delete, title: "Delete" do %><i class="material-icons mdi-action-delete"></i><% end %></li>
+            <li class="collection-item ">
+              <div class="row">
+                <div class="col s6">
+                  <%= food.name %>
+                </div>
+                <div class="col s6">
+                  <%= link_to mood_food_path(mood, food), class: "waves-effect waves-light btn red", method: :delete, title: "Delete" do %><i class="material-icons mdi-action-delete"></i><% end %>
+                </div>
+              </div>
+            </li>
           <% end %>
         </ul>
       </div>
