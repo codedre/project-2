@@ -24,30 +24,33 @@ $(document).ready(function() {
   $("#query").keydown(function(event) {
     if (event.keyCode === 13){
       query = $(this).val();
-      $.ajax({
-        url: '/search?query=',
-        type: 'GET',
-        dataType: 'json',
-        data: {query: query}
-      })
-      .done(function( response ) {
-        console.log(response);
-        $(".quesiton-wrapper").removeClass('valign-wrapper').css('height', 'auto');
-        displayResults(response);
-      })
-      .fail(function() {
-        console.log("error");
-      })
-      .always(function() {
-        console.log("complete");
-      });
-
+      searchYelp(query);
     }
   });
 
   $(".yelp").submit(function(event) {
     event.preventDefault();
   });
+
+  function searchYelp(query){
+    $.ajax({
+      url: '/search?query=',
+      type: 'GET',
+      dataType: 'json',
+      data: {query: query}
+    })
+    .done(function( response ) {
+      console.log(response);
+      $(".quesiton-wrapper").removeClass('valign-wrapper').css('height', 'auto');
+      displayResults(response);
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+  }
 
   function displayResults(results){
     table = $("table");
@@ -65,5 +68,10 @@ $(document).ready(function() {
     });
   }
 
+  $(".mood-list").click(function(event) {
+    var mood = $(event.target).html();
+    console.log(mood);
+    searchYelp(mood);
+  });
 
 });

@@ -10,7 +10,7 @@
     </div>
     <div class="col s12 m2 l3 login">
       <% if user_signed_in? %>
-        <p>I'm signed in</p>
+        <%= render "mood_list" %>
       <% else %>
         <%= render "form" %>
       <% end %>

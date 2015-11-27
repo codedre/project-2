@@ -1,0 +1,7 @@
+<ul class="mood-list">
+  <% @user.moods.each do |mood| %>
+    <li>
+      <%= mood.name %>
+    </li>
+  <% end %>
+</ul>
