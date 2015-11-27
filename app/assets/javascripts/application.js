@@ -25,6 +25,7 @@ $(document).ready(function() {
     if (event.keyCode === 13){
       query = $(this).val();
       searchYelp(query);
+      $(this).val("");
     }
   });
 
@@ -40,7 +41,6 @@ $(document).ready(function() {
       data: {query: query}
     })
     .done(function( response ) {
-      console.log(response);
       $(".quesiton-wrapper").removeClass('valign-wrapper').css('height', 'auto');
       displayResults(response);
     })
@@ -69,9 +69,23 @@ $(document).ready(function() {
   }
 
   $(".mood-list").click(function(event) {
-    var mood = $(event.target).html();
-    console.log(mood);
-    searchYelp(mood);
+    var moodId = $(event.target).attr('id');
+    $.ajax({
+      url: '/moods/' + moodId + '/foods',
+      type: 'GET',
+      dataType: 'json'
+    })
+    .done(function(response) {
+      var randomFoodFromList = response[Math.floor(Math.random()*response.length)];
+      searchYelp(randomFoodFromList.name);
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+
   });
 
 });

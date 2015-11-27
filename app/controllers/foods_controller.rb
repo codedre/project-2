@@ -1,5 +1,13 @@
 class FoodsController < ApplicationController
 
+  def index
+    @mood = Mood.find(params[:mood_id])
+    @food = @mood.foods
+    respond_to do |format|
+      format.html
+      format.json { render json: @food }
+    end
+  end
   def new
     @food = Food.new
     @mood = Mood.find(params[:mood_id])
