@@ -9,6 +9,7 @@ class MoodsController < ApplicationController
   # new
   def new
     @mood = current_user.moods.new
+    @user = current_user
   end
 
   # create
@@ -25,6 +26,7 @@ class MoodsController < ApplicationController
   # edit
   def edit
     @mood = current_user.moods.find(params[:id])
+    @user = current_user
   end
 
   #update
