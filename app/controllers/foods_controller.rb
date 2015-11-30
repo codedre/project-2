@@ -11,6 +11,7 @@ class FoodsController < ApplicationController
   def new
     @food = Food.new
     @mood = Mood.find(params[:mood_id])
+    @user = current_user
   end
 
   def create
